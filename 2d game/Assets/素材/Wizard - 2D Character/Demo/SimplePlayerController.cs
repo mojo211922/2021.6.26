@@ -7,7 +7,7 @@ namespace ClearSky
         public float movePower = 10f;
         public float jumpPower = 15f; //Set Gravity Scale in Rigidbody2D Component to 5
 
-        private Rigidbody2D rb;
+        public Rigidbody2D rb;
         private Animator anim;
         Vector3 movement;
         private int direction = 1;
@@ -86,8 +86,9 @@ namespace ClearSky
 
             Vector2 jumpVelocity = new Vector2(0, jumpPower);
             rb.AddForce(jumpVelocity, ForceMode2D.Impulse);
-
+            
             isJumping = false;
+            anim.SetBool("idle", true);
         }
         void Attack()
         {

@@ -23,6 +23,7 @@ public class jk53 : MonoBehaviour
     {
         Movement();
         SwitchAnim();
+        Attack();
     }
 
     void Movement()
@@ -42,6 +43,13 @@ public class jk53 : MonoBehaviour
         }
     }
 
+    void Attack()
+    {
+        if (Input.GetButtonDown("Attack"))
+        {
+            anim.SetTrigger("攻擊觸發");
+        }
+    }
     void SwitchAnim()
     {
         anim.SetBool("待機開關", false);
